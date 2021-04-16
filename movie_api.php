@@ -5,11 +5,12 @@
 	<?php require 'css.php'?>
 </head>
 <body>
+	
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="Image/camera-reels.svg" class="d-inline-block align-text-top" style="width: 50px;height: 45px;">
-     <div class="title1"> Movie</div>
+     <div style="font-size: 30px; padding-left:55px; margin-top:-35px;"> Movie</div>
     </a>
   </div>
 </nav>
@@ -23,13 +24,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="Image/p2638199066.webp.jpg" class="d-block w-100" alt="...">
+      <img src="Image/p443400336.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="Image/p2580430938.jpg" class="d-block w-100" alt="...">
+      <img src="Image/p2459898309.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="Image/p2638199066.webp.jpg" class="d-block w-100" alt="...">
+      <img src="Image/p2553240846.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -45,6 +46,12 @@
 
 
 	<div class= "head">
+
+		<br>
+			<div class="container">
+				<div class="row">
+					
+	
 <?php
 
 $curl = curl_init();
@@ -60,36 +67,44 @@ $query = array(
 
 
 
-$url = "https://imdb-api.com/zh_CN/API/MostPopularMovies/k_lnrd0r36"."?".http_build_query($query);
+$url = "https://imdb-api.com/zh_CN/API/MostPopularMovies/k_42myoes7"."?".http_build_query($query);
 
 curl_setopt($curl, CURLOPT_URL, $url);
 
 $result = json_decode(curl_exec($curl));
 
 foreach ($result->items as $sightings ) {
-	
-	print "<img src='" .$sightings->image."' height=200px;margin-left:300px;'><br>";
+	print '<div class="col-12 col-md-6 col-lg-4">';
+	print "<a href='film.php?id=".$sightings->id."'><img src='" .$sightings->image."' height=200px;margin-left:300px;'></a><br>";
 
-	print"<h1 style=' text-align: center;color:#FF6347;font-size:50px;font-family:Microsoft YaHei;'>".$sightings->title."</h1>";
+	print"<h1 style=' text-align: center;color:#FF6347;font-size:35px;font-family:Microsoft YaHei;'>".$sightings->title."</h1>";
 
 	print"<h3 style=' text-align: center;font-size:20px;color:#E9967A;'>Year:".$sightings->year."</h3>";
-	print "</br>";
+
 	print"<h3 style=' text-align: center;font-size:20px;color:#E9967A;'>DB Rating:".$sightings->imDbRating."</h3>";
 
-	print "</br>";
+	print "</br></div>";
 };
 
 
 
 ?>
 </div>
+</div>
+</div>
+
+
+
 </body>
 
 <style>
+
 .head{
    text-align:center;
    background-color: #E6E6FA;
+
  
 }
+
 <style>
 </html>
