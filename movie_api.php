@@ -77,11 +77,11 @@ foreach ($result->items as $sightings ) {
 	print '<div class="col-12 col-md-6 col-lg-4">';
 	print "<a href='film.php?id=".$sightings->id."'><img src='" .$sightings->image."' height=200px;margin-left:300px;'></a><br>";
 
-	print"<h1 style=' text-align: center;color:#FF6347;font-size:35px;font-family:Microsoft YaHei;'>".$sightings->title."</h1>";
+	print"<h1 style=' text-align: center;color:#D1CFCF;font-size:35px;font-family:Microsoft YaHei;'>".$sightings->title."</h1>";
 
-	print"<h3 style=' text-align: center;font-size:20px;color:#E9967A;'>Year:".$sightings->year."</h3>";
+	print"<h3 style=' text-align: center;font-size:20px;color:#D1CFCF;'>Year:".$sightings->year."</h3>";
 
-	print"<h3 style=' text-align: center;font-size:20px;color:#E9967A;'>DB Rating:".$sightings->imDbRating."</h3>";
+	print"<h3 style=' text-align: center;font-size:20px;color:#D1CFCF;'>DB Rating:".$sightings->imDbRating."</h3>";
 
 	print "</br></div>";
 };
@@ -101,7 +101,7 @@ foreach ($result->items as $sightings ) {
 
 .head{
    text-align:center;
-   background-color: #E6E6FA;
+   background-color: black;
 
  
 }
